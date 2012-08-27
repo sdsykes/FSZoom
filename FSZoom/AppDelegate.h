@@ -7,9 +7,19 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@class Zoomer;
+
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
+  IBOutlet IKImageView *iView;
+  CGImageRef desktopImage;
+}
 
 @property (assign) IBOutlet NSWindow *window;
+@property (nonatomic, retain) NSOpenGLContext *glContext;
+@property (nonatomic, retain) NSOpenGLPixelFormat *pixelFormat;
+@property (nonatomic, retain) Zoomer *zoomer;
+@property (nonatomic, retain) NSDate *date;
 
 @end
